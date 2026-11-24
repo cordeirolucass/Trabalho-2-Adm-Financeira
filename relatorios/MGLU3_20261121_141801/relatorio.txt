@@ -1,0 +1,97 @@
+====================================================================================================
+ RELATÓRIO DE ESTRUTURA DE CAPITAL - Magazine Luiza S.A. (MGLU3)
+ Gerado em 21/11/2026 14:18  |  valores em R$ milhões
+====================================================================================================
+
+1. SITUAÇÃO ATUAL (Cap. 12 - custo de capital)
+
+                         Indicador |          Valor |                                                      Fonte / cálculo
+------------------------------------+----------------+----------------------------------------------------------------------
+               Capital próprio (E) |  R$ 5.779,9 mi | brapi.dev - cotação de 20/11/2026; DRE anual encerrada em 31/12/2025
+                  Dívida bruta (D) |  R$ 5.161,0 mi |                                                                 idem
+                Caixa e aplicações |  R$ 2.049,8 mi |                                                   idem (informativo)
+        Valor da empresa V = E + D | R$ 10.940,9 mi |                                                                 soma
+                   Alavancagem D/V |         47,17% |                                                          D / (E + D)
+                               D/E |          0,893 |                                                                D / E
+                      EBIT (LAJIR) |  R$ 1.918,7 mi | brapi.dev - cotação de 20/11/2026; DRE anual encerrada em 31/12/2025
+           Taxa livre de risco r_f |         13,75% |                               BCB/SGS 432 - Meta Selic em 09/12/2026
+                    Beta das ações |          2,791 |                                                    brapi / informado
+        Prêmio de risco de mercado |          8,50% |                                                             premissa
+      Custo do capital próprio r_E |         37,47% |                                            CAPM: r_f + beta x prêmio
+                Cobertura de juros |          2,40x |                                                         EBIT / juros
+                  Rating sintético |            BB+ |                                                  tabela de cobertura
+               Custo da dívida r_D |         15,49% |                                               rating sintético (BB+)
+             Alíquota Tc (efetiva) |         34,00% |                                                            IR + CSLL
+                        WACC atual |         24,62% |                                             E/V·r_E + D/V·r_D·(1−Tc)
+Custo de capital desalavancado r_U |         27,10% |                                                    E/V·r_E + D/V·r_D
+                Beta desalavancado |          1,756 |                                                beta / [1+(1−Tc)·D/E]
+          Valor não alavancado V^U |  R$ 9.519,3 mi |                                          V − Tc·D + PV(dificuldades)
+
+2. SIMULAÇÃO DA ALAVANCAGEM - TEORIA DO TRADE-OFF (Cap. 15.4/15.5)
+   (* = estrutura atual; <ótimo = maior valor V^L)
+
+         D/V | D (R$ mi) | Rating | Cobert. |    r_D | beta_L |     r_E |   WACC | PV benef. fiscal | PV dific. financ. | V^L (R$ mi)
+--------------+-----------+--------+---------+--------+--------+---------+--------+------------------+-------------------+-------------
+        0,0% |         0 |    AAA |       ∞ | 14,34% |   1,76 |  28,68% | 28,68% |                0 |                 0 |       9.519
+        5,0% |       547 |    AAA |   24,46 | 14,34% |   1,82 |  29,20% | 28,21% |              186 |                 2 |       9.704
+       10,0% |     1.094 |    AAA |   12,23 | 14,34% |   1,88 |  29,77% | 27,74% |              372 |                 2 |       9.890
+       15,0% |     1.641 |     AA |    8,09 | 14,45% |   1,96 |  30,42% | 27,28% |              558 |                12 |      10.065
+       20,0% |     2.188 |     A+ |    5,98 | 14,67% |   2,05 |  31,14% | 26,85% |              744 |                14 |      10.249
+       25,0% |     2.735 |      A |    4,73 | 14,82% |   2,14 |  31,96% | 26,42% |              930 |                16 |      10.434
+       30,0% |     3.282 |     A- |    3,91 | 14,96% |   2,25 |  32,90% | 25,99% |            1.116 |                59 |      10.576
+       35,0% |     3.829 |     A- |    3,35 | 14,96% |   2,38 |  33,98% | 25,54% |            1.302 |                59 |      10.762
+       40,0% |     4.376 |    BBB |    2,88 | 15,22% |   2,53 |  35,25% | 25,17% |            1.488 |               179 |      10.828
+       45,0% |     4.923 |    BBB |    2,56 | 15,22% |   2,70 |  36,74% | 24,73% |            1.674 |               179 |      11.014
+     47,2% * |     5.161 |    BB+ |    2,40 | 15,49% |   2,79 |  37,47% | 24,62% |            1.755 |               333 |      10.941
+       50,0% |     5.470 |    BB+ |    2,26 | 15,49% |   2,92 |  38,53% | 24,38% |            1.860 |               333 |      11.046
+       55,0% |     6.017 |     B+ |    1,93 | 16,50% |   3,17 |  40,72% | 24,31% |            2.046 |               595 |      10.970
+60,0% <ótimo |     6.565 |     B+ |    1,77 | 16,50% |   3,49 |  43,46% | 23,92% |            2.232 |               595 |      11.156
+       65,0% |     7.112 |      B |    1,57 | 17,17% |   3,91 |  46,97% | 23,81% |            2.418 |               876 |      11.061
+       70,0% |     7.659 |     B- |    1,33 | 18,90% |   4,46 |  51,67% | 24,23% |            2.604 |             1.071 |      11.052
+       75,0% |     8.206 |    CCC |    1,07 | 21,95% |   5,23 |  58,23% | 25,42% |            2.790 |             1.404 |      10.905
+       80,0% |     8.753 |    CCC |    1,00 | 21,95% |   6,40 |  68,11% | 25,22% |            2.972 |             1.404 |      11.087
+       85,0% |     9.300 |    CCC |    0,94 | 21,95% |   8,53 |  86,23% | 25,63% |            2.972 |             1.404 |      11.087
+       90,0% |     9.847 |    CCC |    0,89 | 21,95% |  12,79 | 122,48% | 26,04% |            2.972 |             1.404 |      11.087
+
+3. MODIGLIANI-MILLER (Cap. 15.2 e 15.3)
+
+  D/V |  D/E | r_E (MM) | WACC sem IR | WACC com IR | V^L=V^U+Tc·D
+-------+------+----------+-------------+-------------+--------------
+ 0,0% | 0,00 |   27,10% |      27,10% |      27,10% |        9.519
+ 5,0% | 0,05 |   27,72% |      27,10% |      26,84% |        9.705
+10,0% | 0,11 |   28,39% |      27,10% |      26,58% |        9.891
+15,0% | 0,18 |   29,15% |      27,10% |      26,31% |       10.077
+20,0% | 0,25 |   30,01% |      27,10% |      26,05% |       10.263
+25,0% | 0,33 |   30,98% |      27,10% |      25,79% |       10.449
+30,0% | 0,43 |   32,08% |      27,10% |      25,52% |       10.635
+35,0% | 0,54 |   33,36% |      27,10% |      25,26% |       10.821
+40,0% | 0,67 |   34,85% |      27,10% |      25,00% |       11.007
+45,0% | 0,82 |   36,61% |      27,10% |      24,73% |       11.193
+47,2% | 0,89 |   37,47% |      27,10% |      24,62% |       11.274
+50,0% | 1,00 |   38,72% |      27,10% |      24,47% |       11.379
+55,0% | 1,22 |   41,30% |      27,10% |      24,21% |       11.565
+60,0% | 1,50 |   44,53% |      27,10% |      23,94% |       11.751
+65,0% | 1,86 |   48,67% |      27,10% |      23,68% |       11.937
+70,0% | 2,33 |   54,20% |      27,10% |      23,42% |       12.123
+75,0% | 3,00 |   61,95% |      27,10% |      23,15% |       12.309
+80,0% | 4,00 |   73,56% |      27,10% |      22,89% |       12.495
+85,0% | 5,67 |   92,92% |      27,10% |      22,63% |       12.681
+90,0% | 9,00 |  131,63% |      27,10% |      22,36% |       12.867
+
+4. RISCO DO NEGÓCIO x RISCO FINANCEIRO - ROE por cenário de EBIT
+
+      Estrutura | Recessão (EBIT −40%) | Normal | Expansão (EBIT +40%) | Amplitude
+-----------------+----------------------+--------+----------------------+-----------
+Sem dívida (0%) |                6,94% | 11,57% |               16,20% |     9,26%
+  Atual (47,2%) |                4,02% | 12,78% |               21,54% |    17,53%
+  Ótima (60,0%) |                1,03% | 12,60% |               24,18% |    23,15%
+
+5. CONCLUSÕES
+
+  1. Estrutura atual: 47,2% de dívida e 52,8% de capital próprio (D/E = 0,89). Cobertura de juros de 2,40x, rating sintético BB+ e WACC de 24,62%.
+  2. Mercado perfeito (MM, 15.2): o WACC permaneceria em r_U = 27,10% para qualquer nível de dívida - o r_E sobe exatamente o suficiente para compensar a dívida mais barata.
+  3. Com impostos (15.3): cada R$ 1 de dívida permanente gera 34% de economia fiscal; o valor subiria linearmente com a dívida, o que levaria à conclusão irreal de 100% de dívida.
+  4. Trade-off (15.5): o valor máximo V^L = R$ 11.156,3 mi ocorre com D/V = 60,0% (rating B+, r_D = 16,50%). O WACC mínimo (23,81%) ocorre com D/V = 65,0%. A empresa está SUB-ALAVANCADA (pode ganhar valor tomando mais dívida).
+  5. Para chegar à estrutura ótima a empresa precisaria captar cerca de R$ 1.403,5 mi de dívida (recomprando ou emitindo ações). O ganho estimado de valor para os acionistas seria de R$ 215,4 mi (2,0% do valor atual).
+  6. Risco financeiro: sem dívida, o ROE varia 9,3% entre recessão e expansão (risco do negócio). Na estrutura ótima essa amplitude passa a 23,1% - a dívida amplia o retorno e também o risco do acionista.
+  7. Limitações: o modelo não captura custos de agência, assimetria de informação (pecking order), flexibilidade financeira e o padrão do setor (Cap. 15.6). O resultado é uma referência para a estrutura-alvo de capital, não uma regra automática.

@@ -1,0 +1,20 @@
+{
+  "nome": "Petroleo Brasileiro SA Pfd",
+  "ticker": "PETR4",
+  "E": 588547.212774,
+  "D": 362505.0,
+  "caixa": 62636.0,
+  "ebit": 145628.0,
+  "beta": 0.50000453,
+  "rf": 0.1375,
+  "premio_mercado": 0.055,
+  "Tc": 0.34,
+  "rD_informado": null,
+  "custo_falencia": 0.25,
+  "variacao_cenario": 0.4,
+  "passo_simulacao": 0.05,
+  "fontes": {
+    "rf": "BCB/SGS 432 - Meta Selic em 09/12/2026",
+    "empresa": "brapi.dev - cotação de 20/11/2026; DRE anual encerrada em 31/12/2025"
+  }
+}

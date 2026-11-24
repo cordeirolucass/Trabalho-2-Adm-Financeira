@@ -1,0 +1,20 @@
+{
+  "nome": "Magazine Luiza S.A.",
+  "ticker": "MGLU3",
+  "E": 5779.857751,
+  "D": 5161.013,
+  "caixa": 2049.79,
+  "ebit": 1918.683,
+  "beta": 2.7911663,
+  "rf": 0.1375,
+  "premio_mercado": 0.085,
+  "Tc": 0.34,
+  "rD_informado": null,
+  "custo_falencia": 0.25,
+  "variacao_cenario": 0.4,
+  "passo_simulacao": 0.05,
+  "fontes": {
+    "rf": "BCB/SGS 432 - Meta Selic em 09/12/2026",
+    "empresa": "brapi.dev - cotação de 20/11/2026; DRE anual encerrada em 31/12/2025"
+  }
+}

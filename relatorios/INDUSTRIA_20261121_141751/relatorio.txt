@@ -1,0 +1,95 @@
+====================================================================================================
+ RELATÓRIO DE ESTRUTURA DE CAPITAL - Indústria Hipotética S.A. 
+ Gerado em 21/11/2026 14:17  |  valores em R$ milhões
+====================================================================================================
+
+1. SITUAÇÃO ATUAL (Cap. 12 - custo de capital)
+
+                         Indicador |          Valor |                                       Fonte / cálculo
+------------------------------------+----------------+-------------------------------------------------------
+               Capital próprio (E) | R$ 10.000,0 mi |     arquivo exemplo_empresa.json (empresa hipotética)
+                  Dívida bruta (D) |  R$ 2.500,0 mi |                                                  idem
+                Caixa e aplicações |    R$ 800,0 mi |                                    idem (informativo)
+        Valor da empresa V = E + D | R$ 12.500,0 mi |                                                  soma
+                   Alavancagem D/V |         20,00% |                                           D / (E + D)
+                               D/E |          0,250 |                                                 D / E
+                      EBIT (LAJIR) |  R$ 2.000,0 mi |     arquivo exemplo_empresa.json (empresa hipotética)
+           Taxa livre de risco r_f |         13,75% | premissa do arquivo de exemplo (Selic de 13,75% a.a.)
+                    Beta das ações |          1,100 |                                     brapi / informado
+        Prêmio de risco de mercado |          5,50% |                                              premissa
+      Custo do capital próprio r_E |         19,80% |                             CAPM: r_f + beta x prêmio
+                Cobertura de juros |          5,40x |                                          EBIT / juros
+                  Rating sintético |              A |                                   tabela de cobertura
+               Custo da dívida r_D |         14,82% |                                  rating sintético (A)
+             Alíquota Tc (efetiva) |         34,00% |                                             IR + CSLL
+                        WACC atual |         17,80% |                              E/V·r_E + D/V·r_D·(1−Tc)
+Custo de capital desalavancado r_U |         18,80% |                                     E/V·r_E + D/V·r_D
+                Beta desalavancado |          0,944 |                                 beta / [1+(1−Tc)·D/E]
+          Valor não alavancado V^U | R$ 11.669,3 mi |                           V − Tc·D + PV(dificuldades)
+
+2. SIMULAÇÃO DA ALAVANCAGEM - TEORIA DO TRADE-OFF (Cap. 15.4/15.5)
+   (* = estrutura atual; <ótimo = maior valor V^L)
+
+         D/V | D (R$ mi) | Rating | Cobert. |    r_D | beta_L |    r_E |   WACC | PV benef. fiscal | PV dific. financ. | V^L (R$ mi)
+--------------+-----------+--------+---------+--------+--------+--------+--------+------------------+-------------------+-------------
+        0,0% |         0 |    AAA |       ∞ | 14,34% |   0,94 | 18,94% | 18,94% |                0 |                 0 |      11.669
+        5,0% |       625 |    AAA |   22,32 | 14,34% |   0,98 | 19,12% | 18,64% |              213 |                 2 |      11.880
+       10,0% |     1.250 |    AAA |   11,16 | 14,34% |   1,01 | 19,32% | 18,34% |              425 |                 2 |      12.092
+       15,0% |     1.875 |     AA |    7,38 | 14,45% |   1,05 | 19,55% | 18,05% |              638 |                15 |      12.292
+     20,0% * |     2.500 |      A |    5,40 | 14,82% |   1,10 | 19,80% | 17,80% |              850 |                19 |      12.500
+       25,0% |     3.125 |      A |    4,32 | 14,82% |   1,15 | 20,09% | 17,51% |            1.062 |                19 |      12.713
+       30,0% |     3.750 |     A- |    3,57 | 14,96% |   1,21 | 20,41% | 17,25% |            1.275 |                73 |      12.871
+       35,0% |     4.375 |     A- |    3,06 | 14,96% |   1,28 | 20,79% | 16,97% |            1.488 |                73 |      13.084
+       40,0% |     5.000 |    BBB |    2,63 | 15,22% |   1,36 | 21,23% | 16,75% |            1.700 |               220 |      13.149
+       45,0% |     5.625 |    BB+ |    2,30 | 15,49% |   1,45 | 21,75% | 16,56% |            1.913 |               408 |      13.173
+50,0% <ótimo |     6.250 |     BB |    2,01 | 15,96% |   1,57 | 22,37% | 16,45% |            2.125 |               485 |      13.309
+       55,0% |     6.875 |     B+ |    1,76 | 16,50% |   1,71 | 23,13% | 16,40% |            2.338 |               729 |      13.277
+       60,0% |     7.500 |      B |    1,55 | 17,17% |   1,88 | 24,08% | 16,43% |            2.550 |             1.074 |      13.146
+       65,0% |     8.125 |     B- |    1,30 | 18,90% |   2,10 | 25,31% | 16,97% |            2.762 |             1.313 |      13.119
+       70,0% |     8.750 |    CCC |    1,04 | 21,95% |   2,40 | 26,94% | 18,22% |            2.975 |             1.722 |      12.923
+       75,0% |     9.375 |    CCC |    0,97 | 21,95% |   2,84 | 29,37% | 18,37% |            3.098 |             1.722 |      13.046
+       80,0% |    10.000 |    CCC |    0,91 | 21,95% |   3,55 | 33,28% | 18,78% |            3.098 |             1.722 |      13.046
+       85,0% |    10.625 |    CCC |    0,86 | 21,95% |   4,73 | 39,79% | 19,19% |            3.098 |             1.722 |      13.046
+       90,0% |    11.250 |    CCC |    0,81 | 21,95% |   7,10 | 52,81% | 19,60% |            3.098 |             1.722 |      13.046
+
+3. MODIGLIANI-MILLER (Cap. 15.2 e 15.3)
+
+  D/V |  D/E | r_E (MM) | WACC sem IR | WACC com IR | V^L=V^U+Tc·D
+-------+------+----------+-------------+-------------+--------------
+ 0,0% | 0,00 |   18,80% |      18,80% |      18,80% |       11.669
+ 5,0% | 0,05 |   19,01% |      18,80% |      18,55% |       11.882
+10,0% | 0,11 |   19,25% |      18,80% |      18,30% |       12.094
+15,0% | 0,18 |   19,51% |      18,80% |      18,05% |       12.307
+20,0% | 0,25 |   19,80% |      18,80% |      17,80% |       12.519
+25,0% | 0,33 |   20,13% |      18,80% |      17,54% |       12.732
+30,0% | 0,43 |   20,51% |      18,80% |      17,29% |       12.944
+35,0% | 0,54 |   20,95% |      18,80% |      17,04% |       13.157
+40,0% | 0,67 |   21,46% |      18,80% |      16,79% |       13.369
+45,0% | 0,82 |   22,06% |      18,80% |      16,54% |       13.582
+50,0% | 1,00 |   22,79% |      18,80% |      16,28% |       13.794
+55,0% | 1,22 |   23,67% |      18,80% |      16,03% |       14.007
+60,0% | 1,50 |   24,78% |      18,80% |      15,78% |       14.219
+65,0% | 1,86 |   26,20% |      18,80% |      15,53% |       14.432
+70,0% | 2,33 |   28,10% |      18,80% |      15,28% |       14.644
+75,0% | 3,00 |   30,76% |      18,80% |      15,02% |       14.857
+80,0% | 4,00 |   34,74% |      18,80% |      14,77% |       15.069
+85,0% | 5,67 |   41,38% |      18,80% |      14,52% |       15.282
+90,0% | 9,00 |   54,66% |      18,80% |      14,27% |       15.494
+
+4. RISCO DO NEGÓCIO x RISCO FINANCEIRO - ROE por cenário de EBIT
+
+      Estrutura | Recessão (EBIT −40%) | Normal | Expansão (EBIT +40%) | Amplitude
+-----------------+----------------------+--------+----------------------+-----------
+Sem dívida (0%) |                6,34% | 10,56% |               14,78% |     8,45%
+  Atual (20,0%) |                5,47% | 10,75% |               16,03% |    10,56%
+  Ótima (50,0%) |                2,14% | 10,59% |               19,03% |    16,90%
+
+5. CONCLUSÕES
+
+  1. Estrutura atual: 20,0% de dívida e 80,0% de capital próprio (D/E = 0,25). Cobertura de juros de 5,40x, rating sintético A e WACC de 17,80%.
+  2. Mercado perfeito (MM, 15.2): o WACC permaneceria em r_U = 18,80% para qualquer nível de dívida - o r_E sobe exatamente o suficiente para compensar a dívida mais barata.
+  3. Com impostos (15.3): cada R$ 1 de dívida permanente gera 34% de economia fiscal; o valor subiria linearmente com a dívida, o que levaria à conclusão irreal de 100% de dívida.
+  4. Trade-off (15.5): o valor máximo V^L = R$ 13.309,1 mi ocorre com D/V = 50,0% (rating BB, r_D = 15,96%). O WACC mínimo (16,40%) ocorre com D/V = 55,0%. A empresa está SUB-ALAVANCADA (pode ganhar valor tomando mais dívida).
+  5. Para chegar à estrutura ótima a empresa precisaria captar cerca de R$ 3.750,0 mi de dívida (recomprando ou emitindo ações). O ganho estimado de valor para os acionistas seria de R$ 809,1 mi (6,5% do valor atual).
+  6. Risco financeiro: sem dívida, o ROE varia 8,4% entre recessão e expansão (risco do negócio). Na estrutura ótima essa amplitude passa a 16,9% - a dívida amplia o retorno e também o risco do acionista.
+  7. Limitações: o modelo não captura custos de agência, assimetria de informação (pecking order), flexibilidade financeira e o padrão do setor (Cap. 15.6). O resultado é uma referência para a estrutura-alvo de capital, não uma regra automática.

@@ -1,0 +1,20 @@
+{
+  "nome": "Indústria Hipotética S.A.",
+  "ticker": "",
+  "E": 10000.0,
+  "D": 2500.0,
+  "caixa": 800.0,
+  "ebit": 2000.0,
+  "beta": 1.1,
+  "rf": 0.1375,
+  "premio_mercado": 0.055,
+  "Tc": 0.34,
+  "rD_informado": null,
+  "custo_falencia": 0.25,
+  "variacao_cenario": 0.4,
+  "passo_simulacao": 0.05,
+  "fontes": {
+    "rf": "premissa do arquivo de exemplo (Selic de 13,75% a.a.)",
+    "empresa": "arquivo exemplo_empresa.json (empresa hipotética)"
+  }
+}
