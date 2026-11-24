@@ -1,8 +1,11 @@
 # Trabalho 2 – Analisador de Estrutura de Capital
 
 **Disciplina:** Administração Financeira (CAD 167) – UFMG/FACE – Turma ICEX/SI – 2º/2026
+
 **Professor:** Bruno Pérez Ferreira
+
 **Dupla:** Lucas Oliveira Frade Ribeiro Cordeiro / Olivier Menezes Vasconcelos
+
 **Tema escolhido:** Estrutura de Capital (Berk, DeMarzo & Harford – caps. 12 e 15)
 
 ## O que a aplicação faz
